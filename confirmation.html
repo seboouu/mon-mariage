@@ -30,106 +30,30 @@
     <header class="page-header">
         <div class="container">
             <h1>Confirmer votre présence</h1>
-            <p>Merci de remplir ce formulaire avant le [Date limite]</p>
+            <p>Merci de remplir ce formulaire avant le 01/03/2025</p>
         </div>
     </header>
 
     <!-- Formulaire -->
     <section class="form-section">
         <div class="container">
-            <form id="confirmationForm" class="confirmation-form">
-                
-                <!-- Informations personnelles -->
-                <div class="form-group">
-                    <label for="nom">Nom et Prénom *</label>
-                    <input type="text" id="nom" name="nom" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="telephone">Téléphone</label>
-                    <input type="tel" id="telephone" name="telephone">
-                </div>
-
-                <!-- Nombre de personnes -->
-                <div class="form-group">
-                    <label for="nb-personnes">Nombre de personnes (vous compris) *</label>
-                    <input type="number" id="nb-personnes" name="nb-personnes" min="1" max="10" value="1" required>
-                </div>
-
-                <div class="form-group" id="accompagnants-container" style="display: none;">
-                    <label for="noms-accompagnants">Nom(s) des accompagnant(s)</label>
-                    <textarea id="noms-accompagnants" name="noms-accompagnants" rows="3" placeholder="Indiquez le nom de chaque personne qui vous accompagne"></textarea>
-                </div>
-
-                <!-- Présence au mariage -->
-                <div class="form-group">
-                    <label>Présence à la cérémonie et à la réception *</label>
-                    <div class="radio-group">
-                        <label class="radio-label">
-                            <input type="radio" name="presence-mariage" value="oui" required>
-                            <span>Oui, je serai présent(e)</span>
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="presence-mariage" value="non">
-                            <span>Non, je ne pourrai pas venir</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Présence au brunch -->
-                <div class="form-group">
-                    <label>Présence au brunch du lendemain *</label>
-                    <div class="radio-group">
-                        <label class="radio-label">
-                            <input type="radio" name="presence-brunch" value="oui" required>
-                            <span>Oui, je serai présent(e)</span>
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="presence-brunch" value="non">
-                            <span>Non, je ne pourrai pas venir</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Régimes alimentaires et allergies -->
-                <div class="form-group">
-                    <label for="allergies">Régimes alimentaires ou allergies</label>
-                    <textarea id="allergies" name="allergies" rows="4" placeholder="Merci de nous indiquer vos éventuelles allergies ou régimes alimentaires particuliers (végétarien, sans gluten, etc.)"></textarea>
-                </div>
-
-                <!-- Chanson préférée -->
-                <div class="form-group">
-                    <label for="chanson">Quelle est votre chanson préférée pour la soirée ? 🎵</label>
-                    <input type="text" id="chanson" name="chanson" placeholder="Artiste - Titre de la chanson">
-                    <small class="form-hint">Pour que tout le monde puisse danser sur ses morceaux favoris !</small>
-                </div>
-
-                <!-- Message libre -->
-                <div class="form-group">
-                    <label for="message">Un petit mot pour les mariés ?</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Laissez-nous un message..."></textarea>
-                </div>
-
-                <!-- Bouton de soumission -->
-                <div class="form-group">
-                    <button type="submit" class="btn-primary btn-large">Envoyer ma confirmation</button>
-                </div>
-
-                <!-- Message de confirmation -->
-                <div id="form-message" class="form-message" style="display: none;"></div>
-            </form>
+            <div class="google-form-container">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSexM9nWnn3yKu_FoWiXPfXUfMmVz8cv3ADB0tJqaNWhFGkN7g/viewform?embedded=true"
+                    width="100%"
+                    height="1749"
+                    frameborder="0"
+                    marginheight="0"
+                    marginwidth="0">
+                    Chargement…
+                </iframe>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 - Mariage [Vos Prénoms] - Avec tout notre amour ❤️</p>
+            <p>&copy; 2025 - Mariage Claire-Marine & Sébastien - Avec tout notre amour ❤️</p>
         </div>
     </footer>
 
