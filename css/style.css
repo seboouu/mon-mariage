@@ -562,6 +562,17 @@ footer {
         text-align: center;
     }
 
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
     .nav-menu.active {
         display: flex;
     }
