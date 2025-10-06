@@ -34,99 +34,96 @@
         </div>
     </header>
 
-    <!-- Section Upload -->
-    <section class="upload-section">
+    <!-- Section Album Google Photos -->
+    <section class="google-photos-section">
         <div class="container">
-            <div class="upload-box">
-                <h2>Ajouter vos photos</h2>
-                <p>Cliquez ou glissez-déposez vos photos ici</p>
+            <div class="google-photos-header">
+                <div class="icon" style="font-size: 5rem; margin: 2rem 0;">📷</div>
                 
-                <div class="upload-area" id="uploadArea">
-                    <div class="upload-icon">📷</div>
-                    <p class="upload-text">Cliquez pour sélectionner des photos</p>
-                    <p class="upload-subtext">ou glissez-déposez vos fichiers ici</p>
-                    <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+                <h2>Album Photo Partagé</h2>
+                <p>Nous avons créé un album Google Photos partagé pour immortaliser ensemble 
+                   tous les moments magiques de cette journée spéciale !</p>
+                
+                <!-- REMPLACEZ CE LIEN PAR VOTRE LIEN GOOGLE PHOTOS -->
+                <a href="https://photos.app.goo.gl/DUnZvgH3ec3CwEFZ9" 
+                   target="_blank" 
+                   class="btn-primary btn-large"
+                   style="display: inline-block; margin: 2rem 0;">
+                    📸 Accéder à l'album partagé
+                </a>
+                
+                <p style="color: #666; font-size: 0.95rem; margin-top: 1rem;">
+                    L'album s'ouvre dans un nouvel onglet
+                </p>
+            </div>
+
+            <!-- Instructions -->
+            <div class="info-box" style="margin-top: 3rem; text-align: left;">
+                <h3>📱 Comment ajouter vos photos ?</h3>
+                <ol style="line-height: 2; font-size: 1.05rem;">
+                    <li><strong>Cliquez sur le bouton</strong> ci-dessus pour accéder à l'album</li>
+                    <li>Sur l'album, cliquez sur <strong>"Ajouter des photos"</strong> (icône +)</li>
+                    <li><strong>Sélectionnez vos photos</strong> depuis votre téléphone ou ordinateur</li>
+                    <li>Vos photos seront <strong>instantanément visibles</strong> par tous les invités</li>
+                    <li>Vous pouvez aussi <strong>télécharger</strong> toutes les photos de l'album</li>
+                </ol>
+            </div>
+
+            <!-- Avantages -->
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">✨</div>
+                    <h4>Qualité originale</h4>
+                    <p>Vos photos sont conservées en haute qualité</p>
                 </div>
 
-                <div id="uploadMessage" class="upload-message" style="display: none;"></div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🔒</div>
+                    <h4>Privé et sécurisé</h4>
+                    <p>Seuls les invités avec le lien peuvent voir l'album</p>
+                </div>
 
-                <div id="previewContainer" class="preview-container" style="display: none;">
-                    <h3>Aperçu de vos photos :</h3>
-                    <div id="previewGrid" class="preview-grid"></div>
-                    <button id="uploadBtn" class="btn-primary btn-large">Envoyer mes photos</button>
+                <div class="advantage-card">
+                    <div class="advantage-icon">📥</div>
+                    <h4>Téléchargement facile</h4>
+                    <p>Téléchargez toutes les photos en un clic</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">📱</div>
+                    <h4>Compatible partout</h4>
+                    <p>Fonctionne sur mobile, tablette et ordinateur</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Galerie existante -->
-    <section class="gallery-section">
-        <div class="container">
-            <h2>Photos partagées par nos invités</h2>
-            <p class="gallery-count" id="galleryCount">Aucune photo pour le moment. Soyez le premier à partager !</p>
-            
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Les photos s'afficheront ici -->
-                <!-- Exemples pour la démonstration (à retirer en production) -->
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/400x300/d4a574/ffffff?text=Photo+1" alt="Photo mariage">
-                    <div class="gallery-overlay">
-                        <button class="btn-view" onclick="openModal(this)">👁️ Voir</button>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/400x300/8b7355/ffffff?text=Photo+2" alt="Photo mariage">
-                    <div class="gallery-overlay">
-                        <button class="btn-view" onclick="openModal(this)">👁️ Voir</button>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/400x300/d4a574/ffffff?text=Photo+3" alt="Photo mariage">
-                    <div class="gallery-overlay">
-                        <button class="btn-view" onclick="openModal(this)">👁️ Voir</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal pour afficher les photos en grand -->
-    <div id="photoModal" class="modal">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImg">
-        <div class="modal-caption" id="modalCaption"></div>
-        <div class="modal-nav">
-            <button class="modal-prev" onclick="prevPhoto()">❮</button>
-            <button class="modal-next" onclick="nextPhoto()">❯</button>
-        </div>
-    </div>
-
-    <!-- Informations importantes -->
-    <section class="info-section">
-        <div class="container">
-            <div class="info-box">
-                <h3>💡 Informations</h3>
-                <ul>
-                    <li>Formats acceptés : JPG, PNG, HEIC</li>
-                    <li>Taille maximale : 10 Mo par photo</li>
-                    <li>Vous pouvez uploader plusieurs photos à la fois</li>
-                    <li>Les photos seront visibles par tous les invités</li>
-                    <li>Merci de ne partager que des photos appropriées 😊</li>
+            <!-- Alternative upload -->
+            <div class="info-box" style="margin-top: 4rem;">
+                <h3>💡 Vous n'avez pas Google Photos ?</h3>
+                <p style="margin: 1rem 0;">Pas de souci ! Vous pouvez aussi :</p>
+                <ul style="text-align: left; line-height: 2;">
+                    <li>Nous envoyer vos photos par email : <strong>[votre-email@example.com]</strong></li>
+                    <li>Utiliser WeTransfer pour les envois volumineux</li>
+                    <li>Nous les donner sur clé USB le jour du mariage</li>
                 </ul>
             </div>
 
-            <div class="info-box" style="margin-top: 2rem;">
-                <h3>📱 Alternative : Partage via lien</h3>
-                <p>Vous pouvez également partager vos photos via :</p>
-                <div style="margin-top: 1rem;">
-                    <a href="#" class="btn-secondary" style="margin: 0.5rem;">Google Photos</a>
-                    <a href="#" class="btn-secondary" style="margin: 0.5rem;">Dropbox</a>
-                    <a href="#" class="btn-secondary" style="margin: 0.5rem;">WeTransfer</a>
-                </div>
+            <!-- CTA Final -->
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem 0; background: var(--light-bg); border-radius: 10px;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+                    📸 Prêt à partager vos souvenirs ?
+                </h3>
+                <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                    Chaque photo compte pour revivre cette journée magique
+                </p>
+                <a href="https://photos.app.goo.gl/VOTRE_LIEN_ICI" 
+                   target="_blank" 
+                   class="btn-primary btn-large">
+                    Accéder à l'album maintenant
+                </a>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer>
         <div class="container">
