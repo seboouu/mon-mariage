@@ -25,7 +25,8 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 80%;
+    max-height: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -84,14 +85,30 @@ body {
     margin: 3px 0;
     transition: 0.3s;
 }
-
+.navbar .nav-brand img {
+    height: 200px;
+    width: auto;
+    display: block;
+}
+.navbar .nav-brand {
+    height: 100px; /* Ajustez selon la hauteur de votre navbar */
+    width: auto;
+    overflow: hidden; /* coupe le bas du logo si trop grand */
+    display: flex;
+    align-items: center;
+    background: none;
+}
 /* ===============================================
    HERO SECTION
    =============================================== */
 .hero {
     position: relative;
-    height: 600px;
+    height: 800px;
     overflow: hidden;
+    background-image: url('../images/hero/logoCMS.png');
+    background-repeat: no-repeat;
+    background-size: 300px auto;
+    background-position: 30px 30px;
 }
 
 .hero-image {
@@ -100,10 +117,19 @@ body {
     position: relative;
 }
 
+.hero-logo {
+    max-width: 100%;
+    max-height: 100%;
+    align-items: left;
+}
+
+
 .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-image::after {
@@ -113,13 +139,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.05);
+    z-index: 3;
 }
 
 .hero-content {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 25%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: var(--white);
@@ -137,17 +164,20 @@ body {
     font-style: italic;
 }
 
+
 /* ===============================================
    INFORMATIONS PRINCIPALES (Accueil)
    =============================================== */
 .main-info {
-    padding: 80px 0;
+    padding: 60px 0;
     background: var(--white);
+    margin-bottom: 250px;  /* espace externe ajouté en bas */
 }
 
 .main-info .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-height: 80px;
     gap: 3rem;
 }
 
@@ -203,8 +233,8 @@ body {
 .welcome-message p {
     font-size: 1.2rem;
     max-width: 800px;
-    margin: 1rem auto;
-    line-height: 1.8;
+    margin: 3rem auto;
+    line-height: 1.2;
 }
 
 /* ===============================================
@@ -994,3 +1024,4 @@ footer {
         }
     }
 }
+
