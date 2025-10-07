@@ -296,6 +296,14 @@ body {
     color: #666;
 }
 
+.section-introleft {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
 .accommodation-grid,
 .transport-grid,
 .contact-grid {
