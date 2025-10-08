@@ -3,7 +3,7 @@
    =============================================== */
 :root {
     /* Palette Bleu Lavande Élégant */
-    --primary-color: #a8b8e6;        /* Bleu lavande doux */
+    --primary-color: rgb(168, 184, 230);        /* Bleu lavande doux */
     --secondary-color: #7b8fc7;      /* Bleu lavande plus profond */
     --accent-color: #c5d3f5;         /* Bleu lavande très clair */
     --text-color: #4a4a4a;           /* Gris anthracite doux */
@@ -52,7 +52,7 @@ body {
 .nav-brand {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .nav-menu {
@@ -69,7 +69,7 @@ body {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .burger {
@@ -270,7 +270,7 @@ body {
 }
 
 .info-card h2 {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: 1rem;
 }
 .info-card p {
@@ -300,7 +300,7 @@ body {
 
 .welcome-message h2 {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: 2rem;
 }
 
@@ -415,7 +415,7 @@ body {
 .timeline-time {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-align: right;
 }
 
@@ -448,7 +448,7 @@ body {
 
 .practical-section h2 {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -500,13 +500,6 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.price {
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 1rem 0;
-}
-
 .info-note {
     color: #666;
     font-style: italic;
@@ -530,7 +523,7 @@ body {
 }
 
 .info-box h3 {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -550,7 +543,7 @@ body {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: bold;
 }
 
@@ -663,7 +656,32 @@ body {
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
+/* ===============================================
+   CTA - encadré final
+   =============================================== */
+.cta-final {
+    text-align: center;
+    margin-top: 2rem;            /* moins d'espace au-dessus */
+    padding: 0.6rem 1rem;        /* réduit la hauteur interne */
+    background: var(--light-bg);
+    border-radius: 10px;
+}
 
+.cta-final h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;          /* police légèrement plus petite */
+}
+
+.cta-final .cta-text {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    color: inherit;
+}
+/* bouton : réduit l'espacement vertical à l'intérieur du CTA */
+.cta-final .btn-primary {
+    margin-top: 0.25rem;
+    padding: 0.45rem 0.9rem;
+}
 /* ===============================================
    BOUTONS
    =============================================== */
@@ -681,7 +699,7 @@ body {
 }
 
 .btn-primary {
-    background: var(--primary-color);
+    background: var(--secondary-color);
     color: var(--white);
     margin-top: 10%;
     width: 50%;
@@ -943,6 +961,12 @@ footer {
     .page-header p {
         font-size: 1rem;
     }
+    .cta-final {
+        margin-top: 1.2rem;
+        padding: 0.5rem 0.8rem;
+    }
+    .cta-final h3 { font-size: 1rem; }
+    .cta-final .cta-text { font-size: 0.95rem; }
 }
 
 /* Très petits écrans */
@@ -1295,7 +1319,7 @@ footer {
     }
 
     .google-photos-header h2 {
-        color: var(--primary-color);
+        color: var(--secondary-color);
         font-size: 2.5rem;
         margin-bottom: 1rem;
     }
