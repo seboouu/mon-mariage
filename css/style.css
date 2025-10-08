@@ -218,24 +218,41 @@ body {
    INFORMATIONS PRINCIPALES (Accueil)
    =============================================== */
 .main-info {
+    position: relative;
+    z-index: 20;
+    margin-top: 20px;
     padding: 60px 0;
     background: var(--white);
-    margin-bottom: 250px;  /* espace externe ajouté en bas */
+    margin-bottom: 32px;  /* espace externe ajouté en bas */
 }
 
 .main-info .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    max-height: 80px;
-    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+    grid-auto-rows: 1fr;
+    box-sizing: border-box;
 }
 
 .info-card {
-    text-align: center;
-    padding: 2rem;
-    border-radius: 10px;
+    position: relative; /* important : pas absolute */
+    background: var(--white);
     box-shadow: var(--shadow);
-    transition: transform 0.3s;
+    border-radius: 10px;
+    margin: 0;
+    padding: 24px;
+    z-index: 1;
+
+     /* centrer verticalement et horizontalement le contenu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* s'assurer que la carte prend toute la hauteur de la grille */
+    height: 100%;
+    text-align: center;
 }
 
 .info-card:hover {
@@ -247,9 +264,17 @@ body {
     margin-bottom: 1rem;
 }
 
+.info-card img {
+    margin-bottom: 12px;
+    display: block;
+}
+
 .info-card h2 {
     color: var(--primary-color);
     margin-bottom: 1rem;
+}
+.info-card p {
+    text-align: center;
 }
 
 .date-large {
@@ -308,6 +333,7 @@ body {
 
 .page-header .container {
     position: relative;
+    padding-right: 360px; /* réserve de l'espace pour l'image sur grand écran */
 }
 
 .page-header .deroule-photo {
@@ -322,7 +348,49 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
-
+/* image alignée à droite du container (desktop) */
+.page-header .pratique-photo {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 215px;        /* ajuster si nécessaire */
+    max-width: 35%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    z-index: 10;
+    display: block;
+}
+.page-header .confirmation-photo {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 215px;        /* ajuster si nécessaire */
+    max-width: 35%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    z-index: 10;
+    display: block;
+}
+.page-header .galerie-photo {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 228px;        /* ajuster si nécessaire */
+    max-width: 35%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    z-index: 10;
+    display: block;
+}
 /* ===============================================
    TIMELINE (Déroulé)
    =============================================== */
@@ -663,6 +731,10 @@ footer {
     .confirmation-photo,
     .galerie-photo { right: 20px; bottom: 20px; width: 220px; }
     .container { padding: 0 16px; }
+    .page-header .container { padding-right: 200px; }
+    .page-header .pratique-photo { width: 180px; max-width: 30%; }
+    .page-header .confirmation-photo { width: 180px; max-width: 30%; }
+    .page-header .galerie-photo { width: 180px; max-width: 30%; }
 }
 
 @media (max-width: 768px) {
@@ -724,6 +796,31 @@ footer {
     .contact-grid {
         grid-template-columns: 1fr;
     }
+    .page-header .container { padding-right: 0; }
+    .page-header .pratique-photo {
+        position: static;
+        transform: none;
+        display: block;
+        margin: 16px auto 0;
+        width: 80%;
+        max-width: 260px;
+    }
+     .page-header .confirmation-photo {
+        position: static;
+        transform: none;
+        display: block;
+        margin: 16px auto 0;
+        width: 80%;
+        max-width: 260px;
+    }
+     .page-header .galerie-photo {
+        position: static;
+        transform: none;
+        display: block;
+        margin: 16px auto 0;
+        width: 80%;
+        max-width: 260px;
+    }
 /* Mobiles (smartphones) */
 @media (max-width: 768px) {
     /* Navbar : burger visible (déjà prévu) et espacement réduit */
@@ -751,11 +848,29 @@ footer {
         max-width: 220px;
     }
     /* Rendre les grilles single-column */
-    .main-info .container,
+    .main-info .container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        grid-auto-rows: auto;
+    }
     .accommodation-grid,
     .transport-grid,
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+     .info-card {
+        width: 100%;
+        padding: 18px;
+    }
+    .welcome-message {
+        margin-top: 20px;
+    }
+    .main-info { 
+        margin-bottom: 24px; 
+    }
+    .page-header .container {
+        position: relative;
+        padding-right: 260px; /* réserve d'espace réduite pour l'image */
     }
     .page-header .deroule-photo {
         position: static;
@@ -765,6 +880,54 @@ footer {
         width: 80%;
         max-width: 260px;
     }
+
+    .page-header .pratique-photo {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 220px;        /* largeur réduite sur desktop */
+        max-width: 28%;      /* limite responsive */
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        z-index: 10;
+        display: block;
+    }
+    .page-header .confirmation-photo {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 220px;        /* largeur réduite sur desktop */
+        max-width: 28%;      /* limite responsive */
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        z-index: 10;
+        display: block;
+    }
+    .page-header .galerie-photo {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 220px;        /* largeur réduite sur desktop */
+        max-width: 28%;      /* limite responsive */
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        z-index: 10;
+        display: block;
+    }
+    /* optionnel : assurer une hauteur suffisante du header */
+    .page-header {
+        padding: 36px 0;
+        overflow: visible;
+}
 }
 
 /* Très petits écrans */
@@ -1153,3 +1316,4 @@ footer {
     }
 }
 
+}
