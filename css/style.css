@@ -25,8 +25,8 @@ body {
 }
 
 .container {
-    max-width: 80%;
-    max-height: 100%;
+    width: 100%;
+    max-width: 1200px; /* limite la largeur sur grand écran */
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -86,12 +86,12 @@ body {
     transition: 0.3s;
 }
 .navbar .nav-brand img {
-    height: 200px;
+    height: 140px; /* hauteur adaptée à la navbar */
     width: auto;
     display: block;
 }
 .navbar .nav-brand {
-    height: 100px; /* Ajustez selon la hauteur de votre navbar */
+    height: 70px; /* hauteur de la barre */
     width: auto;
     overflow: hidden; /* coupe le bas du logo si trop grand */
     display: flex;
@@ -103,7 +103,8 @@ body {
    =============================================== */
 .hero {
     position: relative;
-    height: 800px;
+    min-height: 100vh; /* hauteur relative à la fenêtre */
+    height: auto;
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: 300px auto;
@@ -112,8 +113,11 @@ body {
 
 .hero-image {
     width: 100%;
-    height: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: top center; /* met le haut de l'image en priorité */
     position: relative;
+    z-index: 1;
 }
 
 .hero-logo {
@@ -165,10 +169,10 @@ body {
 
 .deroule-photo {
     position: absolute;
-    top:126px;
+    top:130px;
     right: 50px;
     bottom: 10px;
-    width: 268px;      /* ajuste la taille selon tes besoins */
+    width: 300px;      /* ajuste la taille selon tes besoins */
     height: auto;
     z-index: 100;
     border-radius: 10px; /* optionnel, coins arrondis */
@@ -300,6 +304,23 @@ body {
 .page-header p {
     font-size: 1.2rem;
     font-style: italic;
+}
+
+.page-header .container {
+    position: relative;
+}
+
+.page-header .deroule-photo {
+    position: absolute;
+    right: 0;                 /* aligne sur le bord droit intérieur du container */
+    top: 50%;                 /* ajuste verticalement */
+    transform: translateY(-50%); /* centre verticalement par rapport au header */
+    width: 300px;             /* taille sur grand écran - ajuste si besoin */
+    max-width: 35%;           /* pour rester responsive */
+    height: auto;
+    z-index: 10;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 /* ===============================================
@@ -631,8 +652,19 @@ footer {
 }
 
 /* ===============================================
-   RESPONSIVE
+   RESPONSIVE 
    =============================================== */
+/* Tablettes / petits ordinateurs */
+@media (max-width: 1024px) {
+    .hero { min-height: 50vh; background-size: 220px auto; background-position: 20px 20px; }
+    .hero-content h1 { font-size: 3rem; }
+    .deroule-photo,
+    .pratique-photo,
+    .confirmation-photo,
+    .galerie-photo { right: 20px; bottom: 20px; width: 220px; }
+    .container { padding: 0 16px; }
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -692,6 +724,55 @@ footer {
     .contact-grid {
         grid-template-columns: 1fr;
     }
+/* Mobiles (smartphones) */
+@media (max-width: 768px) {
+    /* Navbar : burger visible (déjà prévu) et espacement réduit */
+    .navbar .container { padding: 0.6rem 12px; }
+
+    /* Hero plus court pour mobile, contenu aligné à gauche */
+    .hero { min-height: 50vh; background-size: 180px auto; background-position: 12px 12px; }
+    .hero-content {
+        left: 12%;
+        top: 45%;
+        transform: translateY(-45%);
+        text-align: left;
+    }
+    .hero-content h1 { font-size: 2.2rem; }
+
+    /* Images flottantes deviennent éléments du flux pour éviter chevauchement */
+    .deroule-photo,
+    .pratique-photo,
+    .confirmation-photo,
+    .galerie-photo {
+        position: static;
+        display: block;
+        margin: 16px auto;
+        width: 80%;
+        max-width: 220px;
+    }
+    /* Rendre les grilles single-column */
+    .main-info .container,
+    .accommodation-grid,
+    .transport-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .page-header .deroule-photo {
+        position: static;
+        transform: none;
+        display: block;
+        margin: 16px auto 0;
+        width: 80%;
+        max-width: 260px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .hero { min-height: 45vh; background-size: 140px auto; background-position: 10px 10px; }
+    .hero-content h1 { font-size: 1.8rem; }
+    .nav-menu a { padding: 0.8rem 0; font-size: 0.95rem; }
+    .btn-primary { width: 100%; margin-top: 1rem; }
 }
 
 /* ===============================================
