@@ -558,7 +558,7 @@ body {
     background: var(--light-bg);
     padding: 2rem;
     border-radius: 10px;
-    margin-top: -1rem;
+    margin-top: 2rem;
 }
 
 .info-box h3 {
