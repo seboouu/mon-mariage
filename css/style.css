@@ -228,6 +228,10 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* optionnel, ombre */
 }
 
+.qrcode {
+    object-fit: relative;
+    position: relative;
+}
 /* ===============================================
    INFORMATIONS PRINCIPALES (Accueil)
    =============================================== */
@@ -801,9 +805,12 @@ footer {
     .hero-content h1 { font-size: 3rem; }
     .deroule-photo,
     .pratique-photo,
+    .qrcode,
     .confirmation-photo,
     .galerie-photo { right: 20px; bottom: 20px; width: 220px; }
     .container { padding: 0 16px; }
+    .container2 { padding: 0 16px; max-width: 100%; grid-template-columns: 1fr;}
+    .main-info.container3 { padding: 10px;max-width: 100%;grid-template-columns: 1fr;}
     .page-header .container { padding-right: 200px; }
     .page-header h1 {margin-left: 6%; margin-right: 20%;}
     .page-header .pratique-photo {
@@ -930,6 +937,22 @@ footer {
         width: 80%;
         max-width: 260px;
     }
+    .main-info .container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        grid-auto-rows: auto;
+    }
+    .main-info .container2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        grid-auto-rows: auto;
+    }
+     .main-info .container3 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        grid-auto-rows: auto;
+    } 
+}
 /* Mobiles (smartphones) */
 @media (max-width: 768px) {
     /* Navbar : burger visible (déjà prévu) et espacement réduit */
@@ -947,6 +970,7 @@ footer {
 
     /* Images flottantes deviennent éléments du flux pour éviter chevauchement */
     .deroule-photo,
+    .qrcode,
     .pratique-photo,
     .confirmation-photo,
     .cadeaux-photo
@@ -962,6 +986,16 @@ footer {
         grid-template-columns: 1fr;
         gap: 16px;
         grid-auto-rows: auto;
+    }
+    .main-info .container2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        grid-auto-rows: auto;
+    }
+     .main-info .container3 {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        padding: 10px;
     }
     .accommodation-grid,
     .transport-grid,
@@ -1463,4 +1497,3 @@ footer {
     }
 }
 
-}
